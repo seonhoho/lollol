@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 구구단 만들어 보세요.
+        document.write('<pre>');
+            for (let y=1; y < 10; y++) {
+        for (let x=2; x< 10; x++) {
+            
+                document.write(x);
+                document.write("&nbsp;X&nbsp;");            
+                document.write(y);
+                document.write("&nbsp;=&nbsp;");   
+                document.write(x*y);
+                document.write("\t");
+            }
+            document.write("\n");
+        }
+        document.write('<pre/>');
+    </script>
+</body>
+</html>
