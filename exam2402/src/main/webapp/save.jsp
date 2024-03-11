@@ -4,6 +4,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("utf8");
 // 폼에서 전송된 데이터 가져오기
 String title = request.getParameter("title");
 String author = request.getParameter("author");

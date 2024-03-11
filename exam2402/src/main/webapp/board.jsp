@@ -34,6 +34,7 @@ ResultSet rs = pstmt.executeQuery();
                     <th scope="col">제목</th>
                     <th scope="col">작성자</th>
                     <th scope="col">내용</th>
+                    <th scope="col">삭제</th> <!-- 삭제 버튼 추가 -->
                 </tr>
             </thead>
             <tbody>
@@ -41,8 +42,14 @@ ResultSet rs = pstmt.executeQuery();
                 <tr>
                     <th scope="row"><%= rs.getInt("num") %></th>
                     <td><%= rs.getString("title") %></td>
-                    <td><%= rs.getString("memberno") %></td>
+                    <td><%= rs.getString("memberno") != null ? rs.getString("memberno") : "미지정" %></td>
                     <td><%= rs.getString("content") %></td>
+                    <td>
+                        <form action="deleteBoard.jsp" method="post">
+                            <input type="hidden" name="num" value="<%= rs.getInt("num") %>">
+                            <button type="submit" class="btn btn-danger">삭제</button>
+                        </form>
+                    </td>
                 </tr>
                 <% } %>
             </tbody>
